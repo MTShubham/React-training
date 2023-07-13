@@ -1,0 +1,29 @@
+:root {
+  --success: #14A44D;
+  --danger: #DC4C64;
+  --danger-light: #f5a6b3;
+  --border-gray: rgba(0,0,0,0.1);
+}
+
+.app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoDiv {
+  width: 30%;
+}
+
+@media screen and (min-width:568px) and (max-width:1392px) {
+  .todoDiv {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:698px) {
+  .todoDiv {
+    width: 80%;
+  }
+}

@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+}
+
+.grid-container {
+    border: 5px solid red;
+    height: 500px;
+
+    /* Only this will make no effect */
+    display: inline-grid;
+    display: grid;
+
+    /* values : column(grid-items will be from left to right in 1D), row(grid-items will be from top to bottom in 1D) */
+    /* grid-auto-flow: column; */
+
+    /* specifies initial height of row */
+    /* grid-auto-rows: 50px; */
+
+    /* specifies initial width of column */
+    /* grid-auto-columns: 100px; */
+
+    /* will create 3 columns with specified width, fr=fraction, minmax() -> Till >500px 1fr will be applied  */
+    /* grid-template-columns: repeat(3, 500px);
+    grid-template-columns: repeat(3, minmax(500px, 1fr));
+    grid-template-columns: 1fr 2fr 1fr; */
+    grid-template-columns: 100px 100px 100px;   
+    
+    grid-template-rows: 100px 100px 100px;   
+
+    /* grid-template-rows = similar to columns */
+    /* grid-template: grid-template-rows / grid-template-columns; */
+
+    /* column-gap: 20px;
+    row-gap: 30px; */
+    /* gap: row-gap column-gap */
+
+    /* w.r.t. the cell position (alignment within the cell), values : start, end, center */
+    /* justify-items: center; */
+    /* align-items: center; */
+    /* place-items: align-items justify-items */
+
+    /* alignment within the grid-container. All the cells will be at one place then it will be applied */
+    /* justify-content: space-around; */
+    /* align-content: space-around; */
+    /* place-content: align-content justify-content; */
+}
+
+.grid-item {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.item-2 {
+    /* specifies starting line */
+    grid-column-start: 2;
+
+    /* specifies ending line if only int value provides(i.e. 3 -> 2 columns will be combined), if (span 2) then 2 columns will be combined. If we specify more columns then the already defined no. of columns will be overridden. */
+    grid-column-end: 3;
+    grid-column-end: span 2;
+    /* grid-column: grid-column-start / grid-column-end; */
+    
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    /* grid-row: grid-row-start / grid-row-end; */
+}
+
+.item-1 {
+    /* relative to the cell position, values : start, end, center */
+    justify-self: center;
+    align-self: center;
+    /* place-self: align-self justify-self */
+}

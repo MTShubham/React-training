@@ -1,0 +1,25 @@
+.todoItem {
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.todoItem td {
+    padding: 12px 5px;
+    word-break: break-all;
+}
+
+.dataTd {
+    width: 400px;
+}
+
+.cancelButton {
+    background-color: var(--danger);
+    color: #FFF;
+    border: 1px solid #FFF;
+    flex: 0.3;
+}
+
+.data {
+    word-wrap: break-word;
+    max-width: inherit;
+    list-style: none;
+}

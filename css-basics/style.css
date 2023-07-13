@@ -1,0 +1,28 @@
+body {
+    height: 2000px;
+    margin: 0;
+}
+
+.div1 {
+    border: 1px solid red;
+    position: relative;
+    top: 50px;
+    left: 100px;
+    right: 100px;   /*it will consider only left, not right as left has higher precedence than right (in relative)*/
+}
+
+.div2 {
+    border: 1px solid black;
+    position: absolute;
+    left: 100px;
+    right: 100px;
+    top: 200px;
+    bottom: 200px;
+    /* height: 200px; */
+}
+
+.div3 {
+    position: sticky;
+    top: 0;
+    border: 1px solid blue;
+}

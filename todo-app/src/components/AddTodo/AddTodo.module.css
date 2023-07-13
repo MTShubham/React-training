@@ -1,0 +1,35 @@
+.btnSuccess {
+    background-color: var(--success);
+    color: #FFF;
+    padding: 8px 20px;
+    border: 1px solid #FFF;
+    border-radius: 3px;
+    margin-left: 10px;
+    width: 80px;
+}
+
+.btnSuccess[disabled] {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+input {
+    padding: 6px;
+    width: 60%;
+}
+
+.addTodoDiv {
+    margin: 30px auto;
+}
+
+.error {
+    background-color: var(--danger-light);
+    color: #FFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width:568px) {
+    .btnSuccess {
+        padding: 8px 2px;
+    }
+}

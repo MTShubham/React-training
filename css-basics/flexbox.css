@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+}
+.flex-container {
+    border: 5px solid red;
+    height: 300px;
+    
+    /*takes the size upto children elements end*/
+    display: inline-flex;   
+    
+    /*takes fill div size*/
+    display: flex;   
+
+    /* values : row, column, row-reverse, column-reverse */
+    /* flex-direction: column; */
+    
+    /* values : warp, wrap-reverse, nowrap */
+    /* flex-wrap: wrap; */
+
+    /* flex-flow: flex-direction flex-wrap; */         /* shorthand property of both */
+
+    /* values : center, flex-start, flex-end, space-between, space-around, space-evenly */
+    /* justify-content: space-around; */
+
+    /* values : center, flex-start, flex-end, stretch(default), baseline(all the content should be on the same line, all other div will be adjusted) */
+    align-items: center;
+
+    /* values : center, flex-start, flex-start, space-between, space-around */
+    /* multiple rows/columns are necessary to use it. So wrap is necessary? */
+    /* align-content: flex-end; */
+}
+
+.flex-items {
+    border: 1px solid black;
+    padding: 20px;
+    width:100px;
+    /* margin-left: auto; */
+
+    /* Default value is 0. Here we are applying it to all the flex-items. So all the flex-items will take same extra space to fill the extra remaining space */
+    /* flex-grow: 1; */
+}
+
+.item-1 {
+    /* padding-top: 100px; */
+
+    /* By default order of all the flex-items are 0. */
+    order: 1;
+
+    /* In display:flex, there might be some space remained at the end. So the flex-item having flex-grow>0 will take the space. */
+    /* flex-grow: 3; */
+
+    /* It is used to give initial width to the item. It is used as alternative to the width. Default = auto */
+    flex-basis: 500px;
+
+    /* flex: flex-grow flex-shrink flex-basis (shorthand property) */
+}
+
+.item-3 {
+    order: 3;
+    /* flex-grow: 1; */
+    
+    /* individual element alignment, values : flex-end, flex-start, center, Default=auto(inherit from parent) */
+    align-self: flex-end;
+}
+
+.item-5 {
+    /* It only works if width is given to the element */
+    flex-shrink: 3;
+}
