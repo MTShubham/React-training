@@ -1,0 +1,41 @@
+.loginDiv {
+    border: 1px solid red;
+    display: grid;
+    justify-items: center;
+}
+
+.loginForm {
+    border: 1px solid black;
+    width: 30%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    row-gap: 15px;
+    padding: 20px;
+}
+
+.inputDiv input[type="text"], input[type="email"], input[type="password"] {
+    padding: 6px 10px;
+    width: 250px;
+}
+
+#email, #password {
+    width: 250px;
+}
+
+input:focus {
+    outline: 1px solid rgb(10, 174, 10);
+}
+
+.loginBtn {
+    grid-column-end: span 2;
+    width: 100px;
+    justify-self: center;
+    padding: 6px;
+    margin-top: 20px;
+}
+
+.navigateToRegisterLink {
+    text-decoration: none;
+    color:rgb(43, 19, 230);
+    font-weight: 500;
+}

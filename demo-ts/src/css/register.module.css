@@ -1,0 +1,41 @@
+.registerDiv {
+    border: 1px solid red;
+    display: grid;
+    justify-items: center;
+}
+
+.registerForm {
+    border: 1px solid black;
+    width: 30%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    row-gap: 15px;
+    padding: 20px;
+}
+
+.inputDiv input[type="text"], input[type="email"], input[type="password"] {
+    padding: 6px 10px;
+    width: 250px;
+}
+
+#name, #email, #password {
+    width: 250px;
+}
+
+input:focus {
+    outline: 1px solid rgb(10, 174, 10);
+}
+
+.registerBtn {
+    grid-column-end: span 2;
+    width: 100px;
+    justify-self: center;
+    padding: 6px;
+    margin-top: 20px;
+}
+
+.navigateTologinLink {
+    text-decoration: none;
+    color:rgb(43, 19, 230);
+    font-weight: 500;
+}

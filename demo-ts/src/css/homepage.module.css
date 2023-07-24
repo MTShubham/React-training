@@ -1,0 +1,29 @@
+body {
+    margin: 15px;
+}
+
+.postsDiv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+}
+
+.post {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: justify;
+}
+
+.actions {
+    float: right;
+}
+
+.deleteIcon {
+    cursor: pointer;
+}
+
+.deleteIcon:hover {
+    color: red;
+}
