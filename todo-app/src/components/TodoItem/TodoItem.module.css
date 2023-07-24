@@ -1,25 +1,54 @@
 .todoItem {
-    border-bottom: 1px solid var(--border-gray);
+    background-color: #FFF;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    border-radius: 5px;
 }
 
-.todoItem td {
-    padding: 12px 5px;
-    word-break: break-all;
+.listData {
+    display: flex;
+    justify-content: flex-start;
 }
 
-.dataTd {
-    width: 400px;
+.markComplete {
+    padding: auto 20px;
 }
 
-.cancelButton {
-    background-color: var(--danger);
-    color: #FFF;
-    border: 1px solid #FFF;
-    flex: 0.3;
+.deleteBtn {
+    background-color: var(--content-background);
+    color: var(--text);
+    padding: 3px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    color: var(--danger);
 }
 
 .data {
-    word-wrap: break-word;
-    max-width: inherit;
     list-style: none;
+    overflow-wrap: anywhere;
+    padding: 10px 20px 10px 0;
+}
+
+.deleteAnimation {
+    position: relative;
+    animation: linear 1;
+    animation-name: slidingDelete;
+    animation-duration: 0.2s;
+}
+
+@keyframes slidingDelete {
+    0% {
+        left: 0;
+        opacity: 1;
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
 }

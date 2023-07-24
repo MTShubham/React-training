@@ -1,0 +1,6 @@
+.todoContent {
+    background-color: var(--content-background);
+    border-radius: 8px;
+    padding: 5px;
+    overflow-x: hidden;
+}

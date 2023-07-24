@@ -1,31 +1,42 @@
 import React, { useState } from 'react'
 import styles from './TodoItem.module.css';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import Checkbox from '@mui/material/Checkbox';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const TodoItem = ({ todo, todoList, setTodoList }) => {
     const [isCompletedTodo, setIsCompletedTodo] = useState(false);
+    const [isDeleted, setIsDeleted] = useState(false);
 
     const toggleComplete = () => {
         setIsCompletedTodo(!isCompletedTodo);
     }
 
     const deleteTodoItem = () => {
-        let listAfterDeletion = todoList.filter(todoItem => todoItem.createdTime !== todo.createdTime);
-        setTodoList(listAfterDeletion);
+        setTimeout(() => {
+            let listAfterDeletion = todoList.filter(todoItem => todoItem.createdTime !== todo.createdTime);
+            setTodoList(listAfterDeletion);
+        }, 200)
     }
 
     return (
         <>
-            <tr className={styles.todoItem}>
-                <td>
-                    <input type="checkbox" checked={isCompletedTodo} onChange={toggleComplete} className={styles.checkbox} />
-                </td>
-                <td className={styles.dataTd}>
+            <div className={`${styles.todoItem}  ${isDeleted ? styles.deleteAnimation : ""}`}>
+                <div className={styles.listData}>
+                    <ListItemIcon>
+                        <Checkbox
+                            edge="start"
+                            checked={isCompletedTodo}
+                            onChange={toggleComplete}
+                        />
+                    </ListItemIcon>
                     <span style={isCompletedTodo ? { textDecoration: "line-through" } : {}} className={styles.data}>{todo.text}</span>
-                </td>
-                <td>
-                    <button className={styles.cancelButton} onClick={deleteTodoItem}>X</button>
-                </td>
-            </tr>
+                </div>
+                <div>
+                    {/* <button className={styles.cancelButton} onClick={deleteTodoItem}>X</button> */}
+                    <DeleteIcon className={styles.deleteBtn} onClick={() => { setIsDeleted(true); deleteTodoItem() }} />
+                </div>
+            </div>
         </>
     )
 }
