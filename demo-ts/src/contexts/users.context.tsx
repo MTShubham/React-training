@@ -18,14 +18,16 @@ interface UserContextType {
     users: User[],
     loggedUserEmail: string,
     saveUser: (userToSave: User) => void,
-    loginUser: (userLoginData: User) => void
+    loginUser: (userLoginData: User) => void,
+    logoutUser: () => void
 }
 
 export const UserContext = React.createContext<UserContextType>({
     users: [],
     loggedUserEmail: "",
     saveUser: (userToSave: User) => { },
-    loginUser: (userLoginData: User) => { }
+    loginUser: (userLoginData: User) => { },
+    logoutUser: () => { }
 });
 
 export const UserProvider = ({ children }: any) => {
@@ -37,9 +39,6 @@ export const UserProvider = ({ children }: any) => {
     useEffect(() => {
         let data = localStorage.getItem("users");
         data !== null ? setUsers(JSON.parse(data)) : setUsers([]);
-        // return () => {
-        //     alert("Alerts")
-        // }
     }, [])
 
     // saving the user to local storage when users state gets update
@@ -71,11 +70,17 @@ export const UserProvider = ({ children }: any) => {
         }
     }
 
+    const logoutUser = () => {
+        sessionStorage.setItem("logged-user", "");
+        navigate("/");
+    }
+
     const values: UserContextType = {
         users,
         loggedUserEmail,
         saveUser,
-        loginUser
+        loginUser,
+        logoutUser
     }
 
     return <UserContext.Provider value={values}>{children}</UserContext.Provider>
