@@ -13,12 +13,12 @@ function App() {
     <div className="App">
       {/* <Counter /> */}
       {/* <LogCoordinates /> */}
-      <ComponentA />
+      {/* <ComponentA /> */}
       {/* <CounterReducer /> */}
       {/* <UseCallback /> */}
       {/* <UseMemo /> */}
       {/* <UseRef /> */}
-      {/* <CustomHook /> */}
+      <CustomHook />
     </div>
   );
 }
